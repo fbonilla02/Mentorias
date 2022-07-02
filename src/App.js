@@ -7,6 +7,7 @@ import {AuthProvider} from './context/AuthContext'
 
 function App() {
   return (
+    <div className="bg-slate-300 text-black h-screen flex " >
     <AuthProvider>
       <Routes>
       <Route path='/'  element={
@@ -18,6 +19,7 @@ function App() {
       <Route path='/register'  element={<Register/> }/>
     </Routes>
     </AuthProvider>
+    </div>
   );
 }
 
