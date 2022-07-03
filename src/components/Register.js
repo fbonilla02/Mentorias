@@ -34,7 +34,7 @@ export  function Register() {
         {error && <Alert message={error}/>}
     </div>
         <form className='flex flex-col px-5' onSubmit={handleSubmit}>
-        <h2 className='text-2xl text-center pb-5 pt-5'>Register</h2>
+        <h2 className='text-2xl text-center pb-5 pt-2'>Register</h2>
             <div className="mb-4">
             <label htmlFor='email'>Email</label>
             <input className='shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline' type='email' name='email' placeholder='youremail@compania.dev' onChange={handleChange}/>
