@@ -6,9 +6,8 @@ import { ProtectedRoute } from './ProtectedRoute';
 import { Register } from '../components/Register';
 import {AuthProvider} from '../context/AuthContext'
 import Monitores from '../components/Monitores/Monitores';
-import Monitorias from '../Monitorias';
+import Monitorias from '../components/Monitorias/Monitorias';
 import 'react-toastify/dist/ReactToastify.css';
-import { ToastContainer } from 'react-toastify';
 
 function App() {
   return (

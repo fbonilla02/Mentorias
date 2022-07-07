@@ -1,13 +1,16 @@
 import React, { useEffect, useState } from 'react'
 import MonitoresForm from './MonitoresForm'
 import { db } from '../../firebase';
-import { addDoc, collection, deleteDoc, doc, getDoc, getDocs, onSnapshot, updateDoc } from 'firebase/firestore';
+import { addDoc, collection, deleteDoc, doc, onSnapshot, query, updateDoc } from 'firebase/firestore';
 import { GrClose, GrEdit } from "react-icons/gr";
-import {  toast } from 'react-toastify';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 export default function Monitores() {
   const [monitoresData, setMonitoresData] = useState([])
   const [currentId, setCurrentId] = useState('')
+  
   const addMonitor = async(data) =>{
 
     if (currentId === '') {
@@ -24,18 +27,22 @@ export default function Monitores() {
     }
   }
   const getMonitores = async () =>{
-      const queryaSnapshot = await onSnapshot(getDocs(collection(db, "monitores")))
-      const docu = [];
-      queryaSnapshot.forEach(element => {
-        docu.push({...element.data(),id:element.id})
-      });
-      setMonitoresData(docu)
+      const q = query(collection(db, 'monitores'))
+      onSnapshot(q, (queryaSnapshot)=>{
+        const docu = [];
+        queryaSnapshot.forEach(element => {
+          docu.push({...element.data(),id:element.id})
+        });
+        setMonitoresData(docu)
+      })
+     
   }
 
 
   useEffect(() => {
     getMonitores()
   }, [])
+  
   const deleteData =  async(e) =>{
       if(window.confirm('esta seguro de eliminar')){
         await deleteDoc(doc(db, "monitores", e));
@@ -61,6 +68,7 @@ export default function Monitores() {
           </div>
         ))}
       </div>
+      <ToastContainer />
     </div>
   )
 }
