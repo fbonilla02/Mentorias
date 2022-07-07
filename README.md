@@ -1,25 +1,24 @@
-
 # Monitorias
 
 ## Que es MonitoriasApp?
 Monitorias es un CRUD en el cual puedes agregar a un monitor(profesor) y asignarlo para una monitoria
 
 
-## Instalacion 
+## Instalación 
 1. Clone el repositorio
-2. Abrir en el editor de codigo favorito
+2. Abrir en el editor de código favorito
 3. En la terminal de tu proyecto ejecutar el comando `npm start` o `npm run start`
 4. Disfruta el proyecto y si tienes alguna retroalimentación con gusto te escucharé
 
 ## Caracteristicas principales
- - Se desarrollo el login y con Firebase, tambien tiene login con Google
- - Al iniciar sesion encontraras en la barra de navegacion dos rutas las cuales son monitorias y monitores.
+ - Se desarrolló el login y register con Firebase, también tiene login con Google
+ - Al iniciar sesión encontrarás en la barra de navegación dos rutas, las cuales son monitorias y monitores.
  - Estos te redireccionan al CRUD de monitores y monitorias 
  
 
 
 ## Implementacion
- - Tecnologias usadas
+ - Tecnologías usadas
       - React 
       - React-router-dom
       - React-icons
